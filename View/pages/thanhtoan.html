@@ -1,0 +1,115 @@
+  <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="mt-3 mb-4 ">Thanh toán</h2>
+                    <ul class="breadcrumb p-3 " style="background-color: #e9ecef;">
+                        <li class="breadcrumb-item"><a href="index.html">Cửa Hàng</a></li>
+                        <li class="breadcrumb-item"><a href="#!cart">Giỏ Hàng</a></li>
+                        <li class="breadcrumb-item active ">Thanh toán</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+     </div>
+<div>
+
+
+    <section class="check-out">
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="check-left ">
+                        <h2 class="mb-2"> THÔNG TIN CỦA BẠN</h2>
+                        <div class="form-group  ">
+                            <label>Họ và tên<span>*</span></label>
+                            <input  name="user" type="text" required class="form-control border border-2 border-dark "
+                                  
+                                   placeholder='Họ và tên ..' ng-model="dh.username">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Địa chỉ <span>*</span></label>
+                            <input type="text" name="Address" class="form-control border border-2 border-dark"
+                                   title="" placeholder="Địa chỉ của bạn" ng-model="dh.address">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>Địa chỉ Email &nbsp; <span>*</span></label>
+                                    <input  type="email" name="Email" class="form-control border border-2 border-dark"
+                                           title="" placeholder="Địa chỉ" ng-model="dh.email">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>Điện thoại &nbsp;<span>*</span></label>
+                                    <input  type="text" name="sdt" class="form-control border border-2 border-dark" required
+                                           placeholder="Số điện thoại" ng-model="dh.phone"
+                                           >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Ghi chú đơn hàng</label>
+                            <textarea name="ghi_chu" class="form-control border border-2 border-dark" rows="3" required
+                                      placeholder="Ghi chú về đơn hàng của bạn, ví dụ: ghi chú đặc biệt cho giao hàng" ng-model="dh.ghichu"></textarea>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-lg-offset-1 mt-2 ">
+                    <div class="check-right ">
+                        <h2 class="text-uppercase mb-3 ">Thông tin thanh toán</h2>
+                        <div class="checkout_cart border border-2 border-dark p-3  ">
+                            <!-- SẢN PHẨM -->
+                            <div ng-repeat="g in gh">
+                                
+                            
+                            <div class="cart-item d-flex" style="gap: 30px;" >
+                                <div class="img">
+                                    <a href="#"><img class="img-thumbnail" width="100px"  ng-src="{{g.anh}}" alt="#"></a>
+                                </div>
+                                <div class="text">
+                                    <a class="text-decoration-none" href="#"><strong class="text-black">{{g.ten}}</strong></a>
+                                    <p class="mt-md-3  ">Giá tien:
+                                      {{g.gia | number}} VND
+                                    </p>
+                                    <p><span>Số lượng: {{g.soluong}}</span>
+                                    
+                                </div>
+                          
+
+                        </div>
+                        <div class="checkout-cartinfo mt-3">
+                            <p><span class="fw-bolder ">Tổng đơn hàng:</span><strong class="text-danger ml-5" style="font-size: 20px;" >{{g.thanhtien | number}} VND</strong></p>
+                            <input type="hidden" name="tong_tien" value="<?= $tong_tien ?>">
+                            <input type="hidden" name="id_loaiphong" value="<?= $id_loaiphong ?>">
+                            <input type="hidden" name="id_phong" value="<?= $id_phong ?>">
+                        </div>
+                        <div class="checkout-option">
+                            <div class="radio" >
+                                <label >
+                                    <input type="radio" name="thanhtoan"  value="tructiep"> <span style="font-weight: 500;">Thanh toán khi nhận hàng</span>
+                                    <span class="d-flex ml-3 " style="font-size: 12px;" ><strong  style="color: red">*</strong>
+                                       Vui long thanh toan {{g.thanhtien | number}} VND khi nhận được hàng
+                                       </span>
+                                </label>
+                            </div>
+                            
+                          
+                        </div>
+                    </div>
+                </div>
+                <button class="checkout-btn btn mt-4 " ng-click="bill()">ĐẶT HÀNG</button>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+    </section>
+</div>

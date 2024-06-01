@@ -1,0 +1,92 @@
+
+    <div class="container">
+       
+        <div class="all-title-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="mt-3 mb-4 ">Giỏ Hàng</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Cửa Hàng</a></li>
+                            <li class="breadcrumb-item active  ">Giỏ Hàng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="cart" class="table table-hover table-condensed ">
+            <thead>
+                <tr>
+                    <th style="width:40%">Tên sản phẩm</th>
+                    <th style="width:10%">Giá</th>
+                  
+                    <th style="width:10%">Số lượng</th>
+                    <th style="width:22%" class="text-center">Thành tiền</th>
+                    <th style="width:10%"> Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="g in gh">
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-4 hidden-xs "><img ng-src="{{g.anh}}" alt="Sản phẩm 1"
+                                    class="img-responsive" width="100">
+                            </div>
+                            <div class="col-sm-8 ">
+                                <h5 class="nomargin ">{{g.ten}}</h5>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">{{g.gia}} đ</td>
+                    <td data-th="Quantity"><input class="form-control text-center" min="1" ng-model="g.soluong" type="number">
+                    </td>
+                   
+                    <td data-th="Subtotal" class="text-center">{{g.thanhtien | number}} VND</td>
+                    <td class="actions text-center " >
+                       
+                        <button class="btn btn-danger btn-sm" ng-click="onDel(g.id)"><i class="fa fa-trash-o"></i>
+
+                        </button>
+
+                        
+                    </td>
+
+                </tr>
+               
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td class="text-center "><strong>Tổng tiền:{{totalPrice | number }} VND</strong></td>
+                    <td></td>
+                </tr>
+                
+            </tbody>
+            <!-- <tr class="visible-xs"> 
+    <td class="text-center"><strong>Tổng 200.000 đ</strong>
+    </td> 
+   </tr>  -->
+
+
+        </table>
+        <div style="display: flex;justify-content: space-around;">
+            <tr>
+                <td >
+                    <a href="#!sanpham" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                </td>
+                <td></td>
+    
+    
+                <td></td>
+    
+                <td rowspan="2" class="text-center">
+    
+                    <a href="#!thanhtoan" class="btn btn-success ">Thanh toán </a>
+                </td>
+            </tr>
+        </div>
+        
+    </div>
+    

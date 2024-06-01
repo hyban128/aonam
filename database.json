@@ -1,0 +1,108 @@
+{
+  "danh-muc": [
+    {
+      "id": "DM01",
+      "ten": "Áo Thun"
+    },
+    {
+      "id": "DM02",
+      "ten": "Áo Polo"
+    }
+  ],
+  "san-pham": [
+    {
+      "id": "SP01",
+      "anh": "/img/aopolo.webp",
+      "ten": "Áo Polo 14ATP022",
+      "soluong": "20",
+      "gia": "200000",
+      "mota": "Thoải mái, phù hợp mặc thường xuyên.Có cổ áo dệt kim phẳng.Kiểu dáng đẹp.Chỉ khâu dạng sợi mảnh.Không có đường khâu trên cánh tay để có kiểu dáng đẹp hơn.Xẻ tà hai bên cho vẻ ngoài đẹp mắt dù bạn có đóng thùng hay không",
+      "tenDanhMuc": "Áo Polo"
+    },
+    {
+      "id": "SP02",
+      "anh": "/img/aothun4.jpg",
+      "ten": "Áo thun 12ATN022",
+      "soluong": "12",
+      "gia": "250000",
+      "mota": "Vải pique được làm từ sự kết hợp giữa cotton chống vón và polyester tái chế để tạo nên kết cấu mềm mại, nhẹ nhàng.\nGiữ nguyên hình dạng sau nhiều lần giặt.\n Với công nghệ DRY nhanh khô.\nChúng tôi không ngừng tinh chỉnh các chi tiết của thiết kế cổ điển này, bao gồm cả phần cổ áo trông tuyệt vời khi cài khuy hoặc không cài khuy.\nChúng tôi đã cập nhật đường khâu cổ áo để tạo cảm giác mềm mại hơn, thoải mái hơn.\n Thiết kế kiểu dáng cơ bản linh hoạt để tạo kiểu dễ dàng.\nCổ tay áo có đường gân cho phong cách áo polo truyền thống, cao cấp.",
+      "tenDanhMuc": "Áo Thun"
+    },
+    {
+      "id": "SP03",
+      "anh": "/img/aothun3.webp",
+      "ten": "Áo thun 12ATN010",
+      "soluong": "8",
+      "gia": "99000",
+      "mota": "Được làm từ sự pha trộn giữa cotton và polyester chống vón cục cho kết cấu mịn, nhẹ.\n Giữ nguyên hình dạng sau nhiều lần giặt.\nVới công nghệ DRY.\n Chúng tôi không ngừng tinh chỉnh các chi tiết của thiết kế cổ điển này, bao gồm cả phần cổ áo được thiết kế để trông đẹp mắt dù cài nút hay không cài nút .\nĐường khâu ở cổ áo được cải tiến để cải thiện sự thoải mái.\nCổ tay áo có gân mang phong cách truyền thống.\nThiết kế cơ bản đa năng và đường cắt dễ dàng tạo kiểu.",
+      "tenDanhMuc": "Áo Thun"
+    }
+  ],
+  "user": [
+    {
+      "id": "2",
+      "name": "ban",
+      "email": "banphph36928@fpt.edu.vn",
+      "password": "123",
+      "phone": "0382686204",
+      "address": "Thôn 6-Sen Phương",
+      "status": "1"
+    },
+    {
+      "id": "3",
+      "name": "band",
+      "email": "banphph36928@fpt.edu.vn",
+      "password": "Phanban1284@",
+      "phone": "0382686204",
+      "address": "Hà Nội",
+      "status": "0"
+    },
+    {
+      "id": "aefa",
+      "status": 0,
+      "name": "huy ban",
+      "email": "banbow7@gmail.com",
+      "password": "Phanban1284@",
+      "phone": "0382686204",
+      "address": "Thôn 6 Sen Phương"
+    }
+  ],
+  "don-hang": [
+    {
+      "id": "3749",
+      "username": "vdv",
+      "address": "vdav",
+      "phone": "03320",
+      "ghichu": "",
+      "anh": "/img/aothun3.webp",
+      "ten": "Áo thun 12ATN010",
+      "soluong": 1,
+      "gia": "99000",
+      "thanhtien": 99000,
+      "tt": 0
+    },
+    {
+      "id": "fa2d",
+      "username": "ban",
+      "address": "csdcvdfvdvdvdv",
+      "phone": "vdvv",
+      "ghichu": "zdvdv",
+      "anh": "/img/aothun4.jpg",
+      "ten": "Áo thun 12ATN022",
+      "soluong": 1,
+      "gia": "250000",
+      "thanhtien": 250000,
+      "tt": 0
+    }
+  ],
+  "gio-hang": [
+    {
+      "id": "23",
+      "anh": "/img/aothun4.jpg",
+      "ten": "Áo thun 12ATN022",
+      "soluong": 1,
+      "gia": "250000",
+      "thanhtien": 250000
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+app.controller("editDonHang",function($scope,$http,$routeParams,$location){
+    $scope.donhang={
+        id:"",
+        username:"",
+        ten:"",
+        anh:"",
+        gia:"",
+        soluong:"",
+        tt:""
+    }
+    $http({
+        method:"GET",
+        url:"http://localhost:3000/don-hang/"+$routeParams.id
+    }).then(function(response){
+        $scope.donhang=response.data
+    })
+    $scope.onClickSubmit=function(){
+        $http({
+            method:"PUT",
+            url:"http://localhost:3000/don-hang/"+$routeParams.id,
+            data:$scope.donhang
+        }).then(function(response){
+            alert("Sửa thành công");
+            $location.path("/donhang/list");
+        })
+    }
+})

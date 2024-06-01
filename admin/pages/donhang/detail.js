@@ -1,0 +1,17 @@
+app.controller("detailDonHang",function($http,$routeParams,$scope,$location){
+$scope.donhang={
+    id:"",
+    username:"",
+    ten:"",
+    anh:"",
+    gia:"",
+    soluong:"",
+    tt:""
+}
+$http({
+    method:"GET",
+    url:"http://localhost:3000/don-hang/"+$routeParams.id
+}).then(function(response){
+    $scope.donhang=response.data
+})
+})

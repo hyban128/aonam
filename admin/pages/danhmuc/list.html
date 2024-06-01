@@ -1,0 +1,50 @@
+<div class="text-end mb-2 ">
+  <a class="btn btn-primary " href="#!danhmuc/create">Thêm mới</a>
+
+</div>
+<table class="table table-bordered text-center ">
+    <thead>
+      <tr>
+        <th class="w-25 ">ID</th>
+        <th class="w-50 ">Tên danh mục</th>
+        <th>Tương tác</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in danhSachDanhmuc">
+            <td style="width: 1px;" class="text-nowrap">{{product.id}}</td>
+           
+            <td style="width: 1px;" class="text-nowrap">{{product.ten}}</td>
+            <td  style="width: 1px;" class="text-nowrap">
+                <a class="btn btn-primary btn-sm" href="#!danhmuc/detail/{{product.id}}">Xem
+                </a>
+                 <a class="btn btn-warning btn-sm" href="#!danhmuc/edit/{{product.id}}">Sửa</a>
+                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#myModal{{product.id}}">Xóa</button>
+                <div class="modal" id="myModal{{product.id}}">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Thông báo</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        Bạn có muốn xóa sản phẩm {{product.ten}}
+                      </div>
+                
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" ng-click="btnxoa(product.id)"  data-bs-dismiss="modal">Xóa</button>
+              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+  </table>

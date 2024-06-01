@@ -1,0 +1,62 @@
+<!-- 1. Tiêu đề trang -->
+<h3 class="text-center">TRANG CHI TIẾT</h3>
+
+<!-- 2. Form nhập liệu -->
+<form>
+    <!-- Khu vực id -->
+    <div class="mt-3">
+        <span class="form-label">ID:</span>
+        <input class="form-control" type="text" ng-model="product.id" disabled >
+    </div>
+
+    <!-- Khu vực tên -->
+    <div class="mt-3">
+        <span class="form-label">Tên danh mục:</span>
+        <input class="form-control" type="text" ng-model="product.ten" disabled>
+    </div>
+
+    <!-- Khu vực button submit -->
+    <div class="mt-3 text-center">
+         <a class="btn btn-success" href="#!danhmuc/list">Quay lại</a>
+         <a class="btn btn-warning" href="#!danhmuc/edit/{{product.id}}">Sửa</a>
+        <button class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#myModal">Xóa</button>
+         <!-- Button to Open the Modal -->
+
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Thông báo</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Bạn có muốn xóa sản phẩm {{product.ten}}
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" ng-click="btnxoa()"  data-bs-dismiss="modal">Xóa</button>
+
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+    </div>
+
+    <!-- Khu vực thông báo lỗi -->
+    <div class="alert alert-danger mt-3" ng-if="validateForm.trangThai === false">
+        <strong>Form không hợp lệ!</strong> 
+        <br>
+        {{validateForm.noiDung}}
+    </div>
+
+</form>

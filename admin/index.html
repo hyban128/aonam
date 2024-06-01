@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Nhúng Bootstrap -->
+    <link rel="stylesheet" href="../lib/bootstrap.css">
+    <script src="../lib/bootstrap.js"></script>
+    
+    <!-- Nhúng AngularJS -->
+    <!-- Lưu ý: Nhúng file angular-route.js sau file angular.js -->
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    
+    <!-- Khu vực viết code logic -->
+    <script>
+        // 2.3. Khởi tạo ng-app
+        var app = angular.module('myApp', ['ngRoute']);
+
+        // 4. Khai báo $routeProvider
+        app.config(function ($routeProvider) {
+            $routeProvider
+            //Danhmuc
+                .when("/danhmuc/list", {
+                    templateUrl: "pages/danhmuc/list.html",
+                    controller: "listDanhmuc"
+                })
+                .when("/danhmuc/create", {
+                    templateUrl: "pages/danhmuc/create.html",
+                    controller: "createDanhmuc"
+                })
+                .when("/danhmuc/detail/:id", {
+                    templateUrl: "pages/danhmuc/detail.html",
+                    controller: "detailProductCtrl"
+                })
+                .when("/danhmuc/edit/:id", {
+                    templateUrl: "pages/danhmuc/edit.html",
+                    controller: "editProductCtrl"
+                })
+                //San pham
+                .when("/sanpham/list",{
+                    templateUrl:"pages/sanpham/list.html",
+                    controller:"listSanPham"
+                })
+                .when("/sanpham/detail/:id",{
+                    templateUrl:"pages/sanpham/detail.html",
+                    controller:"detailSanPham"
+                })
+                .when("/sanpham/create/",{
+                    templateUrl:"pages/sanpham/create.html",
+                    controller:"createSanPham"
+                })
+                .when("/sanpham/edit/:id",{
+                    templateUrl:"pages/sanpham/edit.html",
+                    controller:"editSanPham"
+                })
+                .when("/donhang/list/",{
+                    templateUrl:"pages/donhang/list.html",
+                    controller:"listDonHang"
+                })
+                .when("/donhang/detail/:id",{
+                    templateUrl:"pages/donhang/detail.html",
+                    controller:"detailDonHang"
+                })
+                .when("/donhang/edit/:id",{
+                    templateUrl:"pages/donhang/edit.html",
+                    controller:"editDonHang"
+                })
+                .when("/taikhoan/list/",{
+                    templateUrl:"pages/taikhoan/list.html",
+                    controller:"listTaiKhoan"
+                })
+                .when("/taikhoan/detail/:id",{
+                    templateUrl:"pages/taikhoan/detail.html",
+                    controller:"detailTaiKhoan"
+                })
+                .when("/taikhoan/edit/:id",{
+                    templateUrl:"pages/taikhoan/edit.html",
+                    controller:"editTaiKhoan"
+                })
+                
+        })
+
+    </script>
+    
+    
+    <!-- Nhúng các file js khai báo controller -->
+    <!-- Lưu ý: Nhúng sau khu vực khởi tạo ng-app -->
+    <script src="../admin/pages/danhmuc/list.js"></script>
+    <script src="../admin/pages/danhmuc/detail.js"></script>
+    <script src="../admin/pages/danhmuc/edit.js"></script>
+    <script src="../admin/pages/danhmuc/create.js"></script>
+
+    <script src="../admin/pages/sanpham/list.js"></script>
+    <script src="../admin/pages/sanpham/detail.js"></script>
+    <script src="../admin/pages/sanpham/create.js"></script>
+    <script src="../admin/pages/sanpham/edit.js"></script>
+
+    <script src="../admin/pages/donhang/list.js"></script>
+    <script src="../admin/pages/donhang/detail.js"></script>
+    <script src="../admin/pages/donhang/edit.js"></script>
+
+
+    <script src="../admin/pages/taikhoan/list.js"></script>
+    <script src="../admin/pages/taikhoan/detail.js"></script>
+    <script src="../admin/pages/taikhoan/edit.js"></script>
+
+
+
+    <!-- Cấu hình route cho web admin -->
+    <!-- # Quản lý sản phẩm -->
+    <!-- 1. Trang danh sách sản phẩm | "/product/list" -->
+    <!-- 2. Trang tạo mới sản phẩm | "/product/create" -->
+    <!-- 3. Trang chi tiết sản phẩm | "/product/detail/:id" -->
+    <!-- 4. Trang chỉnh sửa sản phẩm | "/product/edit/:id" -->
+
+    <!-- # Quản lý danh mục sản phẩm -->
+    <!-- 1. Trang danh sách | "/product-category/list" -->
+    <!-- 2. Trang tạo mới | "/product-category/create" -->
+    <!-- 3. Trang chỉnh sửa | "/product-category/edit/:id" -->
+
+    <!-- # Quản lý đơn hàng -->
+    <!-- 1. Trang danh sách | "/order/list" -->
+    <!-- 2. Trang chi tiết | "/order/detail/:id" -->
+    <!-- 3. Trang chỉnh sửa | "/order/edit/:id" -->
+
+</head>
+<body ng-app="myApp">
+    <!-- Làm layout trang admin -->
+    <!-- 1. Khu vực header (navbar) -->
+    <!-- Mở w3school lên để copy -->
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm bg-light shadow ">
+        <div class="container ">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="" href="#">
+                        <img src="/img/logo_bootstrap.webp" 
+                        alt="" 
+                        style="height: 50px;">
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Xin chào</a>
+                </li>
+                
+            </ul>
+        </div>
+    
+    </nav>
+
+    <!-- Khu vực nội dung -->
+    <!-- Thực hiện căn chỉnh bố cục -->
+    <!-- Bên trái chiếm 300px. Bên phải chiếm 100% - 300px -->
+    
+    <div class="container  d-flex mt-4 shadow p-0 ">
+        <!-- 2. Bên trái: Menu điều hướng (nav) -->
+        <div class="bg-light border-end" style="width: 300px; min-height: calc(100vh - 66px);">
+            <ul class="nav flex-column">
+                <li class="nav-item ">
+                    <a class="nav-link bg-primary text-white " href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black " href="#!danhmuc/list">Danh mục</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-black" href="#!sanpham/list">Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-black" href="#!taikhoan/list">Tài khoản</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-black" href="#!donhang/list">Đơn hàng</a>
+                </li>
+                
+            </ul>
+        </div> 
+    
+
+                   <!-- Lên w3school copy phần nav về
+ 3. Bên phải: Nội dung chính (container) -->
+        <div class="" style="width: calc(100% - 300px);">
+            <div class="container mt-3">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>

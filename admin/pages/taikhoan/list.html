@@ -1,0 +1,66 @@
+
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Vai trò</th>
+            <th>Tương tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="taikhoan in danhSachTK">
+            <td  class="text-nowrap">{{taikhoan.id}}</td>
+            <td class="text-nowrap">{{taikhoan.name}}</td>
+            <td class="text-nowrap">{{taikhoan.email}}</td>
+
+            <td class="text-nowrap">{{taikhoan.phone}}</td>
+            <td class="text-nowrap">{{taikhoan.address}}</td>
+
+            <!-- <span class="badge bg-secondary m-0 ">{{donhang.tt}}</span> -->
+
+            <td ng-if="taikhoan.status==0" class="text-center "> <span class="badge text-bg-success ">View</span> 
+            </td>
+            <td ng-if="taikhoan.status==1"  class="text-center "><span class="badge text-bg-danger  ">Admin</span> </td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="#!taikhoan/detail/{{taikhoan.id}}">Xem</a>
+                <a class="btn btn-warning btn-sm" href="#!taikhoan/edit/{{taikhoan.id}}">Sửa</a>
+                <!-- <button class="btn btn-danger btn-sm">Xóa</button> -->
+                <!-- Button to Open the Modal -->
+<button ng-if="taikhoan.status==0" type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#myModal{{taikhoan.id}}">
+    Xóa
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal{{taikhoan.id}}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Thông báo</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Bạn có muốn xóa tài khoản <strong>{{taikhoan.name}}</strong>  không?
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" ng-click="btnDel(taikhoan.id)">Xóa</button>
+
+        </div>
+  
+      </div>
+    </div>
+  </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

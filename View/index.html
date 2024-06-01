@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- <link rel="stylesheet" href="plubic/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <title>PTAH SHOP</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="assets/css/nutgiohang.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <script src="https://kit.fontawesome.com/e6c8e2293e.js" crossorigin="anonymous"></script>   
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <link rel="stylesheet" href="../lib/bootstrap.css">
+    <script src="../lib/bootstrap.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ngRoute']);
+
+// 4. Khai báo $routeProvider
+app.config(function ($routeProvider) {
+    $routeProvider
+    //Danhmuc
+        .when("/", {
+            templateUrl: "pages/trangchu.html",
+            controller: "trangChu"
+        })
+        .when("/dangnhap",{
+            templateUrl:"pages/dangnhap.html",
+            controller:"dangNhap"
+        })
+        .when("/dangky",{
+            templateUrl:"pages/dangky.html",
+            controller:"dangKy"
+        })
+        .when("/danhmuc-sanpham",{
+            templateUrl:"pages/danhmuc_sanpham.html",
+            controller:"danhMuc_SanPham"
+        })
+        .when("/danhmuc-sanpham/Polo",{
+            templateUrl:"pages/danhmuc_polo.html",
+            controller:"danhMuc_SanPham"
+        })
+        .when("/danhmuc-sanpham/Thun",{
+            templateUrl:"pages/danhmuc_thun.html",
+            controller:"danhMuc_SanPham"
+        })
+        .when("/about",{
+            templateUrl:"pages/about.html"
+        })
+        .when("/contact",{
+            templateUrl:"pages/contact.html"
+        })
+        .when("/sanpham",{
+            templateUrl:"pages/products.html",
+            controller:"danhMuc_SanPham"
+        })
+        .when("/chitiet/:id",{
+            templateUrl:"pages/single-product.html",
+            controller:"chiTietSP"
+        })
+        .when("/cart",{
+            templateUrl:"pages/giohang.html",
+            controller:"gioHangSP"
+        })
+        .when("/thanhtoan",{
+            templateUrl:"pages/thanhtoan.html",
+            controller:"thanhToan"
+        })
+        .when("/thanhcong",{
+            templateUrl:"pages/thanhcong.html"
+        })
+        .when("/chitietdh",{
+            templateUrl:"pages/chitietgiohag.html",
+            controller:"donHang"
+        })
+        .when("/ctdonhang",{
+            templateUrl:"pages/ctdonhang.html",
+            controller:"donHang"
+        })
+
+})
+
+</script>
+    
+    <script src="../View/pages/trangchu.js"></script>
+    <script src="../View/pages/danhMuc_SanPham.js"></script>
+    <script src="../View/pages/chitiet.js"></script>
+    <script src="../View/pages/giohang.js"></script>
+    <script src="../View/pages/thanhtoan.js"></script>
+    <script src="../View/pages/donhang.js"></script>
+    <script src="../View/pages/dangky.js"></script>
+    <script src="../View/pages/dangnhap.js"></script>
+    </head>
+    
+<body ng-app="myApp">
+    
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="img/logo-removebg-preview.png" width="150px" height="150px">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#top" class="active">Trang Chủ</a></li>
+                            <li class="submenu">
+                                <a href="#men">Men's</a>
+                                <ul>
+                                    <li><a href="#!danhmuc-sanpham/Polo">Áo Polo</a></li>
+                                    <li><a href="#!danhmuc-sanpham/Thun">Áo Thun</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Trang</a>
+                                <ul>
+                                    <li><a href="#!about">Về Chúng Tôi</a></li>
+                                    <li><a href="#!sanpham">Sản phẩm</a></li>
+                                    <li><a href="#!contact">Liên Hệ Chúng Tôi</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="#explore">Khám Phá</a></li>
+                          
+                            <li><a href="#!cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                           
+                            <!-- <li class="submenu">
+                                <a href="#!dangnhap"><i class="fa-solid fa-user"></i></a>                                <ul>
+                                    <li><a href="#!login?xoa=xoa">Đăng xuất</a></li>
+                                    <li></li>
+                                </ul>
+                            </li> -->
+                            <li class="text-center mt-2" >
+
+                          
+                            <div class="dropdown">
+                                <button type="button" class="border-0 bg-body dropdown-toggle" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <ul class="dropdown-menu" >
+                                    <li><a class="dropdown-item" ng-if="user"  href=""> <span>Xin chào {{user}}</span></a></li>
+                                    <li><a class="dropdown-item" ng-if="user=='ban'" href="../admin/index.html">Admin</a></li>
+                                  <li><a class="dropdown-item" ng-if="user" href="#!dangnhap?xoa=xoa">Đăng xuất</a></li>
+                                  <li><a class="dropdown-item" ng-if="!user" href="#!dangnhap">Đăng nhập</a></li>
+
+                                </ul>
+                               
+                              </div>
+                            </li>
+                           
+
+                        </ul>        
+                        <!-- <a class="menu-trigger">
+                            <span>Menu</span>
+                        </a> -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="slide-show">
+        <img class="slide current-slide" src="img/slide_1_img.webp" alt="Image 1">
+        <img class="slide" src="img/slide_4_img.jpg" alt="Image 2">
+    </div>
+    <script>
+        let currentSlideIndex = 0;
+        let slides = document.getElementsByClassName('slide');
+
+    setInterval(function () {
+    slides[currentSlideIndex].classList.remove('current-slide');
+    currentSlideIndex++;
+    if (currentSlideIndex == slides.length) {
+        currentSlideIndex = 0;
+    }
+    slides[currentSlideIndex].classList.add('current-slide');
+    }, 3000); 
+
+    </script>
+    <section class="section" id="men">
+        <div class="container" ng-view="">
+            
+        </div>
+        
+    </section>
+    
+   
+    <section class="section" id="men">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Tin tức</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="men-item-carousel">
+                        <div class="owl-men-item owl-carousel">
+                            
+
+                                <div class="card" style="width: 18rem;">
+                                    <img src="img/blog1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hệ thống cửa hàng chúng tôi</h5>
+
+                                        <details>
+                                            <div>
+                                                <p class="card-text">  Với mục tiêu mang đến trải nghiệm mua sắm tuyệt vời cho khách hàng, 
+                                                    CATSA đã xây dựng một mạng lưới cửa hàng tiện lợi và chuyên nghiệp. 
+                                                    Hệ thống cửa hàng CATSA được thiết kế với không gian mở rộng, nằm trên những tuyến đường trọng điểm.
+                                                     CATSA chú trọng đến việc trưng bày sản phẩm một cách hợp lý và thẩm mỹ, giúp khách hàng dễ dàng tìm kiếm và lựa chọn những món đồ ưng ý.
+                                                </p>
+
+                                            </div>
+
+                                        </details>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="card" style="width: 18rem;">
+                                    <img src="img/blog2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cách phối đồ nam với Áo Polo</h5>
+
+                                        <details>
+                                            <div>
+                                                <p class="card-text">  
+                                                    Để tạo nên một diện mạo trẻ trung, bạn có thể kết hợp áo polo với một chiếc quần kaki. 
+                                                    Ưu tiên lựa chọn màu sắc tươi sáng và form quần slim fit sẽ tạo ra một phong cách năng động và trẻ trung. 
+                                                    Bên cạnh đó, bạn cũng có thể chọn phối áo polo cùng quần short kaki, tạo nên một diên mạo trẻ trung, thích hợp để đi dạo phố, đi chơi cùng bạn bè.Để thể hiện vẻ thanh lịch và lịch sự, bạn có thể kết hợp áo polo với một chiếc quần tây cổ điển. 
+                                                      
+                                                </p>
+
+                                            </div>
+
+                                        </details>
+
+
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 18rem;">
+                                    <img src="img/block4.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ưu điểm vượt trội của chất liệu linen</h5>
+
+                                        <details>
+                                            <div>
+                                                <p class="card-text">  
+                                                    Vải linen là một loại vải được làm từ sợi lanh (một loại sợi tự nhiên thu được từ cây lanh). 
+                                                    Vải linen đã xuất hiện từ rất lâu và được ưa chuộng trong ngành may mặc. 
+                                                    Đặc điểm nổi bật của vải linen là có cấu trúc dệt sợi chặt chẽ, sợi lanh tự nhiên rất mạnh mẽ và bền bỉ. 
+                                                    Với những ưu điểm vượt trội, vải linen thường được sử dụng để may áo, quần, rèm và nhiều sản phẩm gia dụng khác.
+                                                    
+                                                      
+                                                </p>
+
+                                            </div>
+
+                                        </details>
+
+
+                                    </div>
+                                </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="explore">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <h2>Khám phá sản phẩm của chúng tôi</h2>
+                        <div class="main-border-button">
+                            <a href="">Khám Phá Nhiều Hơn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <img src="img/banner.png" alt="">
+                    </div>
+                </div>
+                </div>
+                </div>
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>Bằng cách đăng ký nhận bản tin của chúng tôi, bạn có thể được giảm giá 30%</h2>
+                        <span>Chi tiết đến từng chi tiết là điều khiến PTAH Shop khác biệt so với các chủ đề khác.</span>
+                    </div>
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email Address" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-2">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul>
+                                <li>Địa điểm cửa hàng:<br><span>Số 1 Trịnh Văn Bô Nam Từ Niêm Hà Nội</span></li>
+                                <li>Số Điện Thoại:<br><span>0123456789</span></li>
+                                <li>Cao Đẳng FPT:<br><span>Tòa L Trường Cao Đẳng FPT</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li>Giờ làm Việc:<br><span>07:30 Sáng - 9:30 Tối Hằng Ngày</span></li>
+                                <li>Email:<br><span>info@fpt.edu.vn</span></li>
+                                <li>Mạng Xã Hội:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="img/logo.png"alt="PTAH SHOP">
+                        </div>
+                        <ul>
+                            <li><a href="#">Số 1 Trịnh Văn Bô Nam Từ Niêm Hà Nội</a></li>
+                            <li><a href="#">info@fpt.edu.vn</a></li>
+                            <li><a href="#">0123456789</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Mua sắm &amp; Danh mục</h4>
+                    <ul>
+                        <li><a href="#">Áo Polo</a></li>
+                        <li><a href="#">Áo Sơ Mi</a></li>
+                        <li><a href="#">Áo Thun</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="about.html">Về Chúng Tôi</a></li>
+                        <li><a href="contact.html">Liên Hệ Chúng Tôi</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Trợ giúp &amp; Thông tin</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+                        <li><a href="#">Giao Hàng</a></li>
+                        <li><a href="#">ID Theo Dõi</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2023 Co., Ltd. All Rights Reserved. 
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+</body>
+</html>

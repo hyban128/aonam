@@ -1,0 +1,9 @@
+app.controller("listDonHang",function($scope,$http){
+    $scope.danhSachDonHang=[];
+    $http({
+        method:"GET",
+        url:"http://localhost:3000/don-hang"
+    }).then(function(response){
+        $scope.danhSachDonHang=response.data
+    })
+}) 

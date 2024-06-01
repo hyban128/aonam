@@ -1,0 +1,97 @@
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Sidebar -->
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Thông tin chi tiết
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="">
+                            <ul class="list-group">
+                                <!-- <li class="list-group-item active"></li> -->
+
+
+
+                                <li class="list-group-item">
+                                    <a href=""><i style="padding: 0 5px;" class="fa-solid fa-pen-to-square"></i>Cập nhật
+                                        tài khoản</a>
+
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="doimk.html"><i style="padding: 0 5px;" class="fa-solid fa-key"></i>Đổi mật khẩu</a>
+                                </li>
+                                <li class="list-group-item"><a href="index.php?act=mycart">
+                                        <i style="padding: 0 5px;" class="fa-solid fa-cart-shopping"></i>Đơn hàng</a>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <a href="../gentelella-master/production/index3.html"><i style="padding: 0 5px;"
+                                            class="fa-solid fa-screwdriver-wrench"></i>Đăng nhập admin</a>
+                                </li>
+
+
+                                <li class="list-group-item">
+                                    <a href="index.php?act=logout"><i style="padding: 0 5px;"
+                                            class="fa-solid fa-right-from-bracket"></i>Thoát</a>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-9">
+            <!-- Nội dung trang -->
+            <div class="card">
+                <div class="card-header">
+                  <h4>Đơn hàng của tôi</h4>
+                </div>
+              </div>
+          
+                <div class="card-body">
+                <table class="table table-hover table-condensed ">
+            <thead class="table-light">
+              <tr>
+                <!-- <th scope="col">User</th> -->
+                <th  class="w-25 ">Ảnh sản phẩm </th>
+                <th scope="col">Tên sản phẩm </th>
+          
+                <!-- <th scope="col">Nội dung</th> -->
+                <th scope="col">Giá</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Tổng tiền</th>
+                <th scope="col"> <a href="#!chitietdh"><i class="fa fa-sign-out text-black "></i></a>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="d in dh">
+                    <td><img class="w-25" ng-src="{{d.anh}}" alt=""></td>
+                    <td>{{d.ten}}</td>
+                    <td>{{d.gia | number}} VND</td>
+                    <td>{{d.soluong}}</td>
+                        <td>
+
+                        {{d.thanhtien | number}} VND
+
+                        </td>
+                </tr>
+               
+               
+               
+            </tbody>
+            </div>
+        </div>
+    </div>
+  

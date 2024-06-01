@@ -1,0 +1,59 @@
+
+ 
+    <section class="section" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Sản Phẩm  Của Chúng Tôi</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" >
+            <div class="row">
+    
+                <div class="col-lg-4" ng-repeat="sp in sanpham" >
+                    <div class="item">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a href="#!chitiet/{{sp.id}}"><i
+                                                class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <img ng-src="{{sp.anh}}" alt="">
+                        </div>
+                        <div class="down-content" style="text-align: center;">
+                            <h4>
+                               {{sp.ten}}
+                            </h4>
+                            <div class="nnn" style="    display: flex;justify-content: center;">
+                                <span style="text-decoration: line-through;">
+                                    200.000 VNĐ
+                                </span>
+                                <span style="padding-left: 10px; font-weight: 500;color: red;">
+                                    
+                                  {{sp.gia}}
+                                </span>
+                            </div>
+                            <!-- <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul> -->
+                        </div>
+    
+                    </div>
+    
+    
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    
+    <!-- jQuery -->
+   

@@ -1,0 +1,49 @@
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" >
+                <div class="left-images">
+                    <img ng-src="{{sanpham.anh}}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h4>{{sanpham.ten}}</h4>
+                    <span class="price">{{sanpham.gia | number}} <u>đ</u></span>
+                    <ul class="stars">
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                    </ul>
+                    <span>MÔ TẢ SẢN PHẨM</span>
+                    <div class="quote">
+                        <i class="fa fa-quote-left"></i><p>{{sanpham.mota}}</p>
+                    </div>
+                  
+                   
+                    
+                    <div class="quantity-content">
+                        <div class="left-content">
+                            <h6>Số Lượng</h6>
+                        </div>
+                        <div class="right-content">
+                            <div class="">
+                                <input class="mt-2 text-center" type="number"  value="1" min="1" ng-model="sl" ng-change="tongtien()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="d-flex ">
+                            <h4 >Thành Tiền:</h4>
+                            <h4 class="ml-5 " style="color: blue;">{{total | number}} VND</h4>
+                        </div>
+                        <div class="main-border-button mt-4 "><button type="submit" class="p-2 bg-danger text text-white " ng-click="onSubmit()">Thêm Vào Giỏ Hàng</button></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+  
